@@ -12,10 +12,10 @@ const AuthorContextMenu = ({comment, close, toggleEdit}) => {
     return (
         <div className="flex flex-col">
             <button type="button" className="mb-3 w-full text-left text-[14px]" onClick={toggleEdit} data-testid="edit">
-                Edit
+                编辑
             </button>
             <button type="button" className="w-full text-left text-[14px] text-red-600" onClick={deleteComment}>
-                Delete
+                删除
             </button>
         </div>
     );

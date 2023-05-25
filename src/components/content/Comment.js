@@ -93,9 +93,9 @@ function UnpublishedComment({comment, openEditMode}) {
 
     let notPublishedMessage;
     if (admin && comment.status === 'hidden') {
-        notPublishedMessage = 'This comment has been hidden.';
+        notPublishedMessage = '这条评论已被隐藏。';
     } else {
-        notPublishedMessage = 'This comment has been removed.';
+        notPublishedMessage = '这条评论已被删除。';
     }
 
     const avatar = (<BlankAvatar />);
@@ -174,7 +174,7 @@ function ReplyFormBox({comment, isInReplyMode, closeReplyMode}) {
 
 // TODO: move name detection to helper
 function AuthorName({comment}) {
-    const name = !comment.member ? 'Deleted member' : (comment.member.name ? comment.member.name : 'Anonymous');
+    const name = !comment.member ? '被删除的会员' : (comment.member.name ? comment.member.name : '匿名');
     return (
         <h4 className="text-[rgb(23,23,23] font-sans text-[17px] font-bold tracking-tight dark:text-[rgba(255,255,255,0.85)]">
             {name}

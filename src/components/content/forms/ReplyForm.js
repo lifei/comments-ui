@@ -11,7 +11,7 @@ const ReplyForm = ({parent, close}) => {
     const [, setForm] = useRefCallback(scrollToElement);
 
     const config = {
-        placeholder: 'Reply to comment',
+        placeholder: '回复评论',
         autofocus: true
     };
 
@@ -34,7 +34,7 @@ const ReplyForm = ({parent, close}) => {
     const submitProps = {
         submitText: (
             <>
-                <span className="hidden sm:inline">Add </span><span className="capitalize sm:normal-case">reply</span>
+                <span className="hidden sm:inline">添加</span><span className="capitalize sm:normal-case">回复</span>
             </>
         ),
         submitSize: 'medium',

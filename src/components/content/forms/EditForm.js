@@ -8,7 +8,7 @@ const EditForm = ({comment, parent, close}) => {
     const {dispatchAction} = useContext(AppContext);
 
     const config = {
-        placeholder: 'Edit this comment',
+        placeholder: '编辑这条评论',
         // warning: we cannot use autofocus on the edit field, because that sets 
         // the cursor position at the beginning of the text field instead of the end
         autofocus: false,
@@ -50,7 +50,7 @@ const EditForm = ({comment, parent, close}) => {
     }, [parent, comment, dispatchAction]);
 
     const submitProps = {
-        submitText: 'Save',
+        submitText: '保存',
         submitSize: 'small',
         submit
     };

@@ -117,11 +117,11 @@ const AddDetailsPopup = (props) => {
                     </div>
                 }
                 <div className={`${isMobile() ? 'w-full' : 'w-[60%]'} p-0 sm:p-8`}>
-                    <h1 className="mb-1 text-center font-sans text-[24px] font-bold tracking-tight text-black sm:text-left">Complete your profile<span className="hidden sm:inline">.</span></h1>
-                    <p className="text-base pr-0 text-center font-sans leading-9 text-neutral-500 sm:pr-10 sm:text-left">Add context to your comment, share your name and expertise to foster a healthy discussion.</p>
+                    <h1 className="mb-1 text-center font-sans text-[24px] font-bold tracking-tight text-black sm:text-left">完善信息<span className="hidden sm:inline">。</span></h1>
+                    <p className="text-base pr-0 text-center font-sans leading-9 text-neutral-500 sm:pr-10 sm:text-left">为您的评论添加上下文，分享您的姓名和专业知识以促进健康的讨论。</p>
                     <section className="mt-8 text-left">
                         <div className="mb-2 flex flex-row justify-between">
-                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">Name</label>
+                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">姓名</label>
                             <Transition
                                 show={!!error.name}
                                 enter="transition duration-300 ease-out"
@@ -141,7 +141,7 @@ const AddDetailsPopup = (props) => {
                             name="name"
                             ref={inputNameRef}
                             value={name}
-                            placeholder="Jamie Larson"
+                            placeholder="张三"
                             onChange={(e) => {
                                 setName(e.target.value);
                             }}
@@ -154,8 +154,8 @@ const AddDetailsPopup = (props) => {
                             maxLength="64"
                         />
                         <div className="mt-6 mb-2 flex flex-row justify-between">
-                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">Expertise</label>
-                            <div className={`font-sans text-[1.3rem] text-neutral-400 ${(expertiseCharsLeft === 0) && 'text-red-500'}`}><b>{expertiseCharsLeft}</b> characters left</div>
+                            <label htmlFor="comments-name" className="font-sans text-[1.3rem] font-semibold">介绍</label>
+                            <div className={`font-sans text-[1.3rem] text-neutral-400 ${(expertiseCharsLeft === 0) && 'text-red-500'}`}>可输入<b>{expertiseCharsLeft}</b>个字符</div>
                         </div>
                         <input
                             id="comments-expertise"
@@ -164,7 +164,7 @@ const AddDetailsPopup = (props) => {
                             name="expertise"
                             ref={inputExpertiseRef}
                             value={expertise}
-                            placeholder="Head of Marketing at Acme, Inc"
+                            placeholder="Acme公司市场总监"
                             onChange={(e) => {
                                 let expertiseText = e.target.value;
                                 setExpertiseCharsLeft(maxExpertiseChars - expertiseText.length);
@@ -184,7 +184,7 @@ const AddDetailsPopup = (props) => {
                             style={{backgroundColor: accentColor ?? '#000000'}}
                             onClick={submit}
                         >
-                            Save
+                            保存
                         </button>
                     </section>
                 </div>

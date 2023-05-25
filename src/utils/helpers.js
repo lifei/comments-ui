@@ -38,36 +38,36 @@ export function formatRelativeTime(dateString) {
     // Diff is in seconds
     let diff = Math.round((now.getTime() - date.getTime()) / 1000);
     if (diff < 5) {
-        return 'Just now';
+        return '刚刚';
     }
 
     if (diff < 60) {
-        return `${diff} seconds ago`;
+        return `${diff}秒前`;
     }
 
     // Diff in minutes
     diff = diff / 60;
     if (diff < 60) {
         if (Math.floor(diff) === 1) {
-            return `One minute ago`;
+            return `1分钟前`;
         }
-        return `${Math.floor(diff)} minutes ago`;
+        return `${Math.floor(diff)}分钟前`;
     }
 
     // First check for yesterday
     // (we ignore setting 'yesterday' if close to midnight and keep using minutes until 1 hour difference)
     const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
     if (date.getFullYear() === yesterday.getFullYear() && date.getMonth() === yesterday.getMonth() && date.getDate() === yesterday.getDate()) {
-        return 'Yesterday';
+        return '昨天';
     }
 
     // Diff in hours
     diff = diff / 60;
     if (diff < 24) {
         if (Math.floor(diff) === 1) {
-            return `One hour ago`;
+            return `1小时前`;
         }
-        return `${Math.floor(diff)} hours ago`;
+        return `${Math.floor(diff)}小时前`;
     }
 
     // Diff in days
@@ -75,18 +75,18 @@ export function formatRelativeTime(dateString) {
     if (diff < 7) {
         if (Math.floor(diff) === 1) {
             // Special case, we should compare based on dates in the future instead
-            return `One day ago`;
+            return `1天前`;
         }
-        return `${Math.floor(diff)} days ago`;
+        return `${Math.floor(diff)}天前`;
     }
 
     // Diff in weeks
     diff = diff / 7;
     if (Math.floor(diff) === 1) {
         // Special case, we should compare based on dates in the future instead
-        return `One week ago`;
+        return `1星期前`;
     }
-    return `${Math.floor(diff)} weeks ago`;
+    return `${Math.floor(diff)}星期前`;
 }
 
 export function formatExplicitTime(dateString) {
